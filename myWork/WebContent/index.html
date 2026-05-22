@@ -41,6 +41,17 @@ along with SMAP.  If not, see <http://www.gnu.org/licenses/>.
 
 	<script src="/app/myWork/build/js/my_work.bundle.js"></script>
 
+	<!-- Chromeless embed support: when loaded with ?embed=1 (e.g. inside the
+	     SharePoint webpart iframe), hide the nav header. Inert without the param. -->
+	<script>
+		if (/[?&]embed=1\b/.test(location.search)) {
+			document.documentElement.className += ' smap-embed';
+		}
+	</script>
+	<style>
+		html.smap-embed nav.navbar { display: none !important; }
+	</style>
+
 </head>
 <body>
 
